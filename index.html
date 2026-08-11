@@ -1,247 +1,427 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Horizon — Get in Touch</title>
+  <title>Medical Solutions — Get in Touch</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    /* =========================================================
+       MEDICAL SOLUTIONS-INSPIRED DESIGN SYSTEM
+       ========================================================= */
 
     :root {
-      --ink: #0f0e0c;
-      --ink-muted: #6b6760;
-      --ink-faint: #b8b5af;
-      --surface: #faf9f7;
-      --surface-raised: #ffffff;
-      --border: #e4e1db;
-      --accent: #c94e2b;
-      --accent-dark: #9c3619;
-      --radius: 4px;
-      --radius-lg: 10px;
+      --navy: #123b5d;
+      --navy-dark: #0b2c46;
+      --blue: #0077b6;
+      --blue-bright: #008dcc;
+      --blue-soft: #eaf6fb;
+
+      --teal: #00a6a6;
+      --teal-soft: #e8f8f7;
+
+      --ink: #183247;
+      --ink-muted: #526878;
+      --ink-light: #718391;
+
+      --surface: #ffffff;
+      --surface-soft: #f5f9fb;
+      --surface-blue: #eef7fa;
+
+      --border: #d9e5ea;
+      --border-dark: #c6d6de;
+
+      --success: #16845b;
+      --success-soft: #eaf8f2;
+
+      --shadow-sm: 0 2px 8px rgba(18, 59, 93, 0.06);
+      --shadow-md: 0 10px 30px rgba(18, 59, 93, 0.10);
+      --shadow-lg: 0 20px 50px rgba(18, 59, 93, 0.12);
+
+      --radius: 8px;
+      --radius-lg: 18px;
+      --radius-xl: 26px;
     }
 
-    html { scroll-behavior: smooth; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--surface);
+      font-family: "DM Sans", sans-serif;
+      background: var(--surface-soft);
       color: var(--ink);
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* ── NAV ── */
+    /* =========================================================
+       NAVIGATION
+       ========================================================= */
+
     nav {
+      height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.25rem 3rem;
+      padding: 0 4rem;
+      background: var(--surface);
       border-bottom: 1px solid var(--border);
-      background: var(--surface-raised);
       position: sticky;
       top: 0;
       z-index: 100;
     }
 
     .logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: -0.02em;
-      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--navy);
       text-decoration: none;
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.045em;
     }
 
-    .logo span { color: var(--accent); }
+    /*
+      Abstract medical/connection mark inspired by the
+      rounded, people-centered visual language of Medical Solutions.
+    */
+    .logo-mark {
+      position: relative;
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
+    }
+
+    .logo-mark::before,
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .logo-mark::before {
+      width: 19px;
+      height: 19px;
+      background: var(--blue);
+      left: 0;
+      top: 2px;
+    }
+
+    .logo-mark::after {
+      width: 19px;
+      height: 19px;
+      background: var(--teal);
+      right: 0;
+      bottom: 2px;
+      border: 4px solid var(--surface);
+      box-shadow: 0 0 0 2px var(--teal);
+    }
+
+    .logo-text span {
+      color: var(--blue);
+    }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 2.5rem;
+      align-items: center;
+      gap: 2.25rem;
     }
 
     nav a {
       text-decoration: none;
-      font-size: 0.875rem;
       color: var(--ink-muted);
-      font-weight: 400;
-      transition: color 0.2s;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition:
+        color 0.2s ease,
+        transform 0.2s ease;
     }
 
-    nav a:hover { color: var(--ink); }
+    nav a:hover {
+      color: var(--blue);
+    }
 
-    /* ── IFRAME SECTION ── */
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.2rem;
+      border-radius: 999px;
+      background: var(--blue);
+      color: white !important;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-cta:hover {
+      background: var(--navy);
+      transform: translateY(-1px);
+    }
+
+    /* =========================================================
+       IFRAME / HERO
+       ========================================================= */
+
     .iframe-section {
-      padding: 3rem 3rem 0;
+      padding: 3.25rem 4rem 0;
+    }
+
+    .iframe-intro {
+      max-width: 780px;
+      margin: 0 auto 1.75rem;
+      text-align: center;
     }
 
     .section-label {
-      font-family: 'Syne', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
+      color: var(--blue);
+      margin-bottom: 0.8rem;
     }
 
-    .iframe-section h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      color: var(--ink);
-      margin-bottom: 0.5rem;
+    .section-label::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--teal);
     }
 
-    .iframe-section p.sub {
-      font-size: 1rem;
+    .iframe-intro h1 {
+      font-family: "Nunito Sans", sans-serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .iframe-intro p {
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.7;
       color: var(--ink-muted);
-      font-weight: 300;
-      margin-bottom: 2rem;
-      max-width: 520px;
     }
 
     .iframe-wrapper {
       position: relative;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
       overflow: hidden;
-      background: #e8e5e0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background: var(--surface);
+      box-shadow: var(--shadow-lg);
     }
 
     .iframe-bar {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 0.6rem 1rem;
+      height: 42px;
+      padding: 0 1rem;
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.45rem;
+      background: #f8fbfc;
+      border-bottom: 1px solid var(--border);
     }
 
     .dot {
-      width: 10px;
-      height: 10px;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
     }
 
-    .dot-r { background: #f97068; }
-    .dot-y { background: #f6c445; }
-    .dot-g { background: #57c454; }
+    .dot-r {
+      background: #e87979;
+    }
+
+    .dot-y {
+      background: #e8bd58;
+    }
+
+    .dot-g {
+      background: #60b987;
+    }
 
     .iframe-url {
-      margin-left: 0.5rem;
       flex: 1;
-      background: var(--border);
-      border-radius: 4px;
-      padding: 0.25rem 0.75rem;
-      font-size: 0.78rem;
-      color: var(--ink-muted);
-      font-family: 'DM Sans', sans-serif;
+      margin-left: 0.55rem;
+      max-width: 500px;
+      background: #edf3f6;
+      border-radius: 999px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.72rem;
+      color: var(--ink-light);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     iframe {
       display: block;
       width: 100%;
       height: 100%;
+      min-height: 700px;
       border: none;
+      background: white;
     }
 
-    /* ── DIVIDER ── */
+    /* =========================================================
+       DIVIDER
+       ========================================================= */
+
     .divider {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 4rem 4rem 0;
       display: flex;
       align-items: center;
-      gap: 1.5rem;
-      padding: 3rem 3rem 0;
-      color: var(--ink-faint);
-      font-size: 0.8rem;
+      gap: 1.25rem;
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .divider::before,
     .divider::after {
-      content: '';
+      content: "";
       flex: 1;
       height: 1px;
       background: var(--border);
     }
 
-    /* ── FORM SECTION ── */
+    /* =========================================================
+       CONTACT SECTION
+       ========================================================= */
+
     .form-section {
-      padding: 3rem;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 4rem;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
+      grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .form-intro {
+      max-width: 560px;
     }
 
     .form-intro h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-      margin-bottom: 1rem;
+      font-family: "Nunito Sans", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 800;
+      letter-spacing: -0.045em;
+      line-height: 1.08;
+      color: var(--navy);
+      margin-bottom: 1.15rem;
     }
 
-    .form-intro p {
-      font-size: 0.95rem;
+    .form-intro p.description {
       color: var(--ink-muted);
-      line-height: 1.7;
-      font-weight: 300;
+      font-size: 1rem;
+      line-height: 1.75;
       margin-bottom: 2rem;
     }
 
     .trust-items {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.9rem;
     }
 
     .trust-item {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      font-size: 0.875rem;
+      gap: 0.85rem;
+      font-size: 0.9rem;
       color: var(--ink-muted);
     }
 
     .trust-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: #f0ede8;
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--blue-soft);
     }
 
     .trust-icon svg {
-      width: 14px;
-      height: 14px;
-      stroke: var(--accent);
+      width: 17px;
+      height: 17px;
+      stroke: var(--blue);
       fill: none;
       stroke-width: 2;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
-    /* ── FORM CARD ── */
+    /* =========================================================
+       FORM CARD
+       ========================================================= */
+
     .form-card {
-      background: var(--surface-raised);
+      position: relative;
+      background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
+      border-radius: var(--radius-xl);
+      padding: 2.75rem;
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .form-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 5px;
+      background: linear-gradient(
+        90deg,
+        var(--blue),
+        var(--teal)
+      );
     }
 
     .form-card h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 600;
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--navy);
       margin-bottom: 2rem;
-      color: var(--ink);
     }
 
     .field-grid {
@@ -250,111 +430,147 @@
       gap: 1.25rem;
     }
 
-    .field-full { grid-column: 1 / -1; }
+    .field-full {
+      grid-column: 1 / -1;
+    }
 
     .field {
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
+      gap: 0.5rem;
     }
 
     label {
       font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--ink-muted);
-      letter-spacing: 0.02em;
+      font-weight: 700;
+      color: var(--ink);
     }
 
-    .required { color: var(--accent); margin-left: 2px; }
+    .required {
+      color: var(--blue);
+      margin-left: 2px;
+    }
 
     input[type="text"],
     input[type="email"] {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
-      padding: 0.65rem 0.9rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--surface);
-      color: var(--ink);
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
       width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius);
+      background: #fbfdfe;
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.92rem;
+      outline: none;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    input[type="text"]:hover,
+    input[type="email"]:hover {
+      border-color: #a9c1cd;
+      background: white;
     }
 
     input:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(201, 78, 43, 0.1);
+      border-color: var(--blue);
+      background: white;
+      box-shadow: 0 0 0 4px rgba(0, 119, 182, 0.1);
     }
 
-    input::placeholder { color: var(--ink-faint); }
+    input::placeholder {
+      color: #9aaab4;
+    }
+
+    /* =========================================================
+       BUTTON
+       ========================================================= */
 
     .submit-btn {
-      margin-top: 1.75rem;
       width: 100%;
-      padding: 0.8rem 1.5rem;
-      background: var(--accent);
-      color: #fff;
-      font-family: 'Syne', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      border: none;
-      border-radius: var(--radius);
-      cursor: pointer;
-      transition: background 0.2s, transform 0.1s;
+      margin-top: 1.75rem;
+      padding: 0.95rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      gap: 0.65rem;
+      border: none;
+      border-radius: 999px;
+      background: var(--blue);
+      color: white;
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      transition:
+        background 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+      box-shadow: 0 7px 18px rgba(0, 119, 182, 0.2);
     }
 
-    .submit-btn:hover { background: var(--accent-dark); }
-    .submit-btn:active { transform: scale(0.98); }
+    .submit-btn:hover {
+      background: var(--navy);
+      box-shadow: 0 9px 22px rgba(18, 59, 93, 0.22);
+      transform: translateY(-1px);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
 
     .submit-btn svg {
-      width: 16px;
-      height: 16px;
-      stroke: #fff;
+      width: 17px;
+      height: 17px;
+      stroke: white;
       fill: none;
       stroke-width: 2;
       stroke-linecap: round;
       stroke-linejoin: round;
-      transition: transform 0.2s;
+      transition: transform 0.2s ease;
     }
 
-    .submit-btn:hover svg { transform: translateX(3px); }
+    .submit-btn:hover svg {
+      transform: translateX(3px);
+    }
 
     .form-note {
       margin-top: 1rem;
-      font-size: 0.75rem;
-      color: var(--ink-faint);
+      color: var(--ink-light);
       text-align: center;
+      font-size: 0.73rem;
     }
 
-    /* ── SUCCESS STATE ── */
+    /* =========================================================
+       SUCCESS STATE
+       ========================================================= */
+
     .success-state {
       display: none;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem;
       gap: 1rem;
     }
 
     .success-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: #f0f9f4;
+      width: 64px;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: center;
+      border-radius: 50%;
+      background: var(--success-soft);
     }
 
     .success-icon svg {
-      width: 24px;
-      height: 24px;
-      stroke: #2d9b5e;
+      width: 27px;
+      height: 27px;
+      stroke: var(--success);
       fill: none;
       stroke-width: 2.5;
       stroke-linecap: round;
@@ -362,160 +578,479 @@
     }
 
     .success-state h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--ink);
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--navy);
     }
 
     .success-state p {
-      font-size: 0.875rem;
+      max-width: 380px;
       color: var(--ink-muted);
-      line-height: 1.6;
+      font-size: 0.9rem;
+      line-height: 1.65;
     }
 
-    /* ── FOOTER ── */
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
     footer {
-      border-top: 1px solid var(--border);
-      padding: 1.5rem 3rem;
+      margin-top: 2rem;
+      padding: 1.6rem 4rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.72);
       font-size: 0.78rem;
-      color: var(--ink-faint);
     }
 
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.25rem; }
-      nav ul { display: none; }
-      .iframe-section { padding: 2rem 1.25rem 0; }
-      .divider { padding: 2rem 1.25rem 0; }
-      .form-section { padding: 2rem 1.25rem; grid-template-columns: 1fr; gap: 2rem; }
-      .field-grid { grid-template-columns: 1fr; }
-      footer { padding: 1.25rem; flex-direction: column; gap: 0.5rem; }
+    footer strong {
+      color: white;
+      font-weight: 700;
     }
-  </style>
-</head>
-<body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#" class="logo">Horiz<span>o</span>n</a>
-    <ul>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Work</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    footer span:last-child {
+      color: rgba(255, 255, 255, 0.6);
+    }
 
-  <!-- IFRAME SECTION -->
-  <section class="iframe-section">
-    <div class="iframe-wrapper">
-      <iframe src="https://app.courseau.co/projects/c644e6da-f943-4d3e-9e98-a0c6aa79169b/preview?mode=course" style="border: none; height:100%; width:100%; min-height:700px;" allowtransparency="true"></iframe>
-    </div>
-  </section>
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
 
-  <!-- DIVIDER -->
-  <div class="divider">Get in touch</div>
-
-  <!-- FORM SECTION -->
-  <section class="form-section" id="contact">
-
-    <div class="form-intro">
-      <p class="section-label">Contact</p>
-      <h2>Let's start a conversation.</h2>
-      <p>Whether you have a project in mind or just want to explore possibilities, we'd love to hear from you. Fill in your details and we'll be in touch within one business day.</p>
-
-      <div class="trust-items">
-        <div class="trust-item">
-          <div class="trust-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          Your data is kept private and never shared.
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          We respond within one business day.
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon">
-            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          </div>
-          No sales calls unless you ask for one.
-        </div>
-      </div>
-    </div>
-
-    <div class="form-card">
-      <h3>Send us a message</h3>
-
-      <div id="form-body">
-        <form id="contact-form" novalidate>
-          <div class="field-grid">
-
-            <div class="field">
-              <label for="name">Full name <span class="required">*</span></label>
-              <input type="text" id="name" name="name" placeholder="Jane Smith" autocomplete="name" required />
-            </div>
-
-            <div class="field">
-              <label for="email">Email address <span class="required">*</span></label>
-              <input type="email" id="email" name="email" placeholder="jane@company.com" autocomplete="email" required />
-            </div>
-
-            <div class="field field-full">
-              <label for="company">Company</label>
-              <input type="text" id="company" name="company" placeholder="Acme Corp" autocomplete="organization" />
-            </div>
-
-          </div>
-
-          <button type="submit" class="submit-btn">
-            Send message
-            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </button>
-
-          <p class="form-note">By submitting, you agree to our Privacy Policy.</p>
-        </form>
-      </div>
-
-      <div class="success-state" id="success-state">
-        <div class="success-icon">
-          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <h3>Message sent!</h3>
-        <p>Thanks for reaching out. We'll get back to you shortly.</p>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <span>© 2026 Horizon Studio</span>
-    <span>Privacy · Terms</span>
-  </footer>
-
-  <script>
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-
-      if (!name || !email) {
-        if (!name) document.getElementById('name').focus();
-        else document.getElementById('email').focus();
-        return;
+    @media (max-width: 1000px) {
+      nav {
+        padding: 0 2rem;
       }
 
-      document.getElementById('form-body').style.display = 'none';
-      const success = document.getElementById('success-state');
-      success.style.display = 'flex';
-    });
+      .iframe-section {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      .divider {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      .form-section {
+        padding: 3rem 2rem;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .form-intro {
+        max-width: 700px;
+      }
+
+      footer {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        height: 68px;
+        padding: 0 1.25rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .logo {
+        font-size: 1.35rem;
+      }
+
+      .logo-mark {
+        width: 30px;
+        height: 30px;
+        flex-basis: 30px;
+      }
+
+      .iframe-section {
+        padding: 2rem 1rem 0;
+      }
+
+      .iframe-intro {
+        margin-bottom: 1.25rem;
+      }
+
+      .iframe-intro h1 {
+        font-size: 2.25rem;
+      }
+
+      .iframe-intro p {
+        font-size: 0.95rem;
+      }
+
+      .iframe-wrapper {
+        border-radius: 14px;
+      }
+
+      .iframe-bar {
+        height: 36px;
+      }
+
+      .iframe-url {
+        font-size: 0.65rem;
+      }
+
+      iframe {
+        min-height: 600px;
+      }
+
+      .divider {
+        padding: 2.5rem 1rem 0;
+        gap: 0.75rem;
+        font-size: 0.68rem;
+      }
+
+      .form-section {
+        padding: 2.5rem 1rem;
+        gap: 2rem;
+      }
+
+      .form-intro h2 {
+        font-size: 2.2rem;
+      }
+
+      .form-card {
+        padding: 2rem 1.25rem;
+        border-radius: 18px;
+      }
+
+      .field-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field-full {
+        grid-column: auto;
+      }
+
+      footer {
+        padding: 1.35rem 1.25rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- =======================================================
+       NAV
+       ======================================================= -->
+
+  <nav>
+    <a href="#" class="logo" aria-label="Medical Solutions home">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span class="logo-text">Medical <span>Solutions</span></span>
+    </a>
+
+```
+<ul>
+  <li><a href="#">About</a></li>
+  <li><a href="#">Work</a></li>
+  <li><a href="#">Services</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+</ul>
+```
+
+  </nav>
+
+  <!-- =======================================================
+       EMBEDDED COURSE / HERO
+       ======================================================= -->
+
+  <section class="iframe-section">
+
+```
+<div class="iframe-intro">
+  <p class="section-label">Healthcare Solutions</p>
+
+  <h1>
+    Your workforce.
+    <br />
+    Your way.
+  </h1>
+
+  <p>
+    Explore our solutions and discover how the right partnership,
+    people, and technology can help you move forward.
+  </p>
+</div>
+
+<div class="iframe-wrapper">
+
+  <div class="iframe-bar" aria-hidden="true">
+    <span class="dot dot-r"></span>
+    <span class="dot dot-y"></span>
+    <span class="dot dot-g"></span>
+
+    <span class="iframe-url">
+      app.courseau.co
+    </span>
+  </div>
+
+  <iframe
+    src="https://app.courseau.co/projects/c644e6da-f943-4d3e-9e98-a0c6aa79169b/preview?mode=course"
+    title="Medical Solutions course"
+    style="border: none; width: 100%; min-height: 700px;"
+    allowtransparency="true"
+  ></iframe>
+
+</div>
+```
+
+  </section>
+
+  <!-- =======================================================
+       DIVIDER
+       ======================================================= -->
+
+  <div class="divider">
+    Let's connect
+  </div>
+
+  <!-- =======================================================
+       CONTACT
+       ======================================================= -->
+
+  <section class="form-section" id="contact">
+
+```
+<div class="form-intro">
+
+  <p class="section-label">Get in touch</p>
+
+  <h2>
+    Let's talk about
+    what comes next.
+  </h2>
+
+  <p class="description">
+    Whether you're exploring a new project, looking for the right
+    solution, or simply have a question, we'd love to hear from you.
+    Send us a few details and our team will be in touch.
+  </p>
+
+  <div class="trust-items">
+
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      Your information is handled with care.
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </div>
+      We'll get back to you within one business day.
+    </div>
+
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2
+            19.79 19.79 0 01-8.63-3.07
+            A19.5 19.5 0 013.07 9.81
+            19.79 19.79 0 010.84 2
+            2 2 0 012-2.18h3a2 2 0 012
+            1.72c.127.96.361 1.903.7 2.81
+            a2 2 0 01-.45 2.11L6.09 8.91
+            a16 16 0 006 6l1.27-1.27
+            a2 2 0 012.11-.45c.907.339
+            1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+      </div>
+      No pressure — just a conversation.
+    </div>
+
+  </div>
+</div>
+
+
+<!-- FORM CARD -->
+
+<div class="form-card">
+
+  <h3>Tell us a little about yourself</h3>
+
+  <div id="form-body">
+
+    <form id="contact-form" novalidate>
+
+      <div class="field-grid">
+
+        <div class="field">
+          <label for="name">
+            Full name
+            <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Jane Smith"
+            autocomplete="name"
+            required
+          />
+        </div>
+
+
+        <div class="field">
+          <label for="email">
+            Email address
+            <span class="required">*</span>
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="jane@company.com"
+            autocomplete="email"
+            required
+          />
+        </div>
+
+
+        <div class="field field-full">
+          <label for="company">
+            Company
+          </label>
+
+          <input
+            type="text"
+            id="company"
+            name="company"
+            placeholder="Your organization"
+            autocomplete="organization"
+          />
+        </div>
+
+      </div>
+
+
+      <button type="submit" class="submit-btn">
+        Send message
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </button>
+
+      <p class="form-note">
+        By submitting, you agree to our Privacy Policy.
+      </p>
+
+    </form>
+  </div>
+
+
+  <!-- SUCCESS STATE -->
+
+  <div class="success-state" id="success-state">
+
+    <div class="success-icon">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+
+    <h3>Thanks for reaching out!</h3>
+
+    <p>
+      We've received your message and will be in touch shortly.
+    </p>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer>
+    <span>
+      © 2026 <strong>Medical Solutions</strong>
+    </span>
+
+```
+<span>
+  Privacy · Terms
+</span>
+```
+
+  </footer>
+
+  <!-- =======================================================
+       FORM SCRIPT
+       ======================================================= -->
+
+  <script>
+    document
+      .getElementById("contact-form")
+      .addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const name =
+          document.getElementById("name").value.trim();
+
+        const email =
+          document.getElementById("email").value.trim();
+
+        if (!name) {
+          document.getElementById("name").focus();
+          return;
+        }
+
+        if (!email) {
+          document.getElementById("email").focus();
+          return;
+        }
+
+        document.getElementById("form-body").style.display = "none";
+
+        const success =
+          document.getElementById("success-state");
+
+        success.style.display = "flex";
+      });
   </script>
+
 </body>
 </html>
